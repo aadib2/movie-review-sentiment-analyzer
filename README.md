@@ -24,8 +24,8 @@ Originally created as the final project for the Cornell Tech ML Foundations Cert
     - Text preprocessing pipeline using NLTK library & regex cleaning
     - TF-IDF feature extraction
     - Modeling using Logistic Regression with hyperparameter tuning using GridSearchCV, trained on sample of 4500 reviews
-    - Model evaluation using various metrics like accuracy, confusion matrix & ROC-AUC curve (sklearn)
-    - SHAP explainability for model interpretations: Interactive waterfall plots showing word contributions
+    - Test set model evaluation using various metrics like accuracy, confusion matrix & ROC-AUC curve (sklearn)
+    - Explainable AI: SHAP explainability for model interpretations with summary & waterfall plots showing word contributions
     - Interactive web app showcasing predictive ability + model interpretability (Streamlit)
 
 ## 🛠️ Tech Stack
@@ -48,21 +48,29 @@ Originally created as the final project for the Cornell Tech ML Foundations Cert
 - AUC Score: 92%
 - Precision: 82% (Positive)
 - Recall: 87% (Positive)
-- Confusion Matrix: insert HERE
-- ROC Curve: insert HERE
 
 ---
 
-## 🎯 Key Features
+## 🎯 Visualizations
+<img src="visualizations/confusion-matrix.png" alt="Confusion Matrix" width="300" />
 
-- **Interactive Review Analysis**: Enter any movie review and get instant sentiment predictions
-- **Explainable AI**: SHAP waterfall plots show exactly which words influenced the prediction and by how much
-- **Model Interpretability**: Understand why the model made specific decisions, especially for ambiguous reviews
-- **Probability Visualization**: See confidence scores for both positive and negative predictions
-- **Text Preprocessing Pipeline**: Complete NLP preprocessing
+*Figure: Confusion Matrix of LR Model Predictions*
 
+<img src="visualizations/roc-curve.png" alt="ROC" width="300" />
 
-📍 To run locally:
+*Figure: Receiver Operating Characteristics (ROC) Curve with AUC Score*
+
+<img src="visualizations/shap-summary-plot.png" alt="SHAP Summary" width="300" />
+
+*Figure: SHAP summary plot created with SHAP values of first 200 reviews in test set. You can noticeably see that more negative words typically have higher, more negative feature-values whereas more positive words typically have higher, but more positive feature-values, which helps us understand which words are contributing the most to the model's sentiment predictions.*
+
+<img src="visualizations/tn-prediction.png" alt="SHAP Waterfall" width="300" />
+
+*Figure: SHAP Waterfall plot for a single negative review prediction that the model got right (True Negative). Words present in the review like "boring" and "awful" contribute heavily to the model's negative total SHAP value & negative prediction.*
+
+---
+
+## 📍 To run locally:
 
 Clone the repository:
 
@@ -70,9 +78,9 @@ Clone the repository:
 
 `cd movie-review-sentiment-analyzer`
 
-Create and activate virtual environment:
+Create and activate virtual environment (I used Python 3.11.9 for my venv):
 
-`python -m venv venv`
+`python -m venv env-name # env-name represents the name you give to your venv`
 
 `source venv/bin/activate  # On Windows: venv\Scripts\activate`
 
@@ -89,9 +97,19 @@ Open your browser and go to http://localhost:8501
 
 ## 📁 Project Structure
 
-TO BE UPDATED
+| File/Folder | Description |
+|-------------|-------------|
+| `DefineAndSolveMLProblem.ipynb` | Complete ML pipeline with analysis & documentation |
+| `demo.py` | Interactive Streamlit web application |
+| `preprocessing.py` | Text preprocessing and cleaning functions |
+| `log_reg_model.sav` | Trained logistic regression model |
+| `tfidf_vectorizer.sav` | Fitted TF-IDF vectorization object |
+| `shap_explainer.sav` | SHAP explainer for model interpretability |
+| `requirements.txt` | Python package dependencies |
+| `visualizations/` | Performance charts and analysis plots |
+| `README.md` | Project documentation and setup guide |
 
-🔍 Acknowledgements:
+## 🔍 Acknowledgements:
 
 - IMDB Movie Reviews Dataset contributors
 - Cornell Tech and Break Through Tech for the ML Foundations Certification program
