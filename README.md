@@ -5,6 +5,10 @@ Built with scikit-learn, NLTK, SHAP, and Streamlit, this project classifies movi
 
 Originally created as the final project for the Cornell Tech ML Foundations Certification through Break Through Tech, expanded with NLP techniques, explainable AI features, and web app. More specifics can be found below.
 
+**Future Features to Implement 💪**
+- Utilizing fine tuning techniques with more advanced sentiment analysis models from HuggingFace like BERT
+- Minimal Backend API using Flask to fetch new movie review data online for a particular film and store in SQLiteDB
+- Applying pipeline on fetched movie reviews and displaying sentiment predictions and visualizations
 ---
 
 ## 🚀 Live Demo Site
