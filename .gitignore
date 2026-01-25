@@ -1,3 +1,11 @@
 kaggle.json
 .kaggle/
 data
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+.venv/
+venv/
+.env

@@ -6,7 +6,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-from preprocessing import preprocess
+from src.preprocessing import preprocess
 
 # load in all necessary files
 model_lr_best = pickle.load(open('log_reg_model.sav', 'rb'))
