@@ -9,9 +9,9 @@ tmdb_api = os.getenv('TMDB_API_KEY')
 tmdb.API_KEY = tmdb_api
 
 # a test case for the movie 'The Matrix'
-review = tmdb.Reviews()
-response = movie.info()
+# reviews = tmdb.Movies(id=603).reviews()
+# print(reviews['results'][0]['content'])
 
-print(movie.title)
-print(movie.budget)
-print(response)
+# get popular movies
+reviews_avatar = tmdb.Movies(id=83533).reviews()
+print(reviews_avatar)
